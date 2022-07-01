@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Fragment } from "react";
 import {
   TableContainer,
   Table,
@@ -7,7 +7,7 @@ import {
   TableRow,
   TableCell,
   Box,
-  Tooltip,
+  Tooltip
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
@@ -15,19 +15,20 @@ import TrainIcon from "@mui/icons-material/Train";
 import EventSeatIcon from "@mui/icons-material/EventSeat";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteTrain } from "../features/trainSlice";
+import { deleteTrain } from "../../features/trainSlice";
+import { Link } from "react-router-dom";
+
 
 export const TrainList = () => {
   const dispatch = useDispatch();
-  const trains = useSelector(store => store.train.train);
+  const trains = useSelector((store) => store.train.train);
   console.log(trains);
 
   const deleteHandler = (id) => {
     dispatch(deleteTrain(id));
-    console.log(trains);
   };
-  return (
-    <TableContainer>
+
+  const renderList = () => <TableContainer>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -80,7 +81,9 @@ export const TrainList = () => {
                     enterDelay={500}
                     leaveDelay={200}
                   >
+                  <Link to={`edit-train/${row.id}`}>
                     <EditIcon className="ml-7 text-green-400" />
+                  </Link>
                   </Tooltip>
                   <Tooltip title="Удалить" enterDelay={500} leaveDelay={200}>
                     <DeleteIcon
@@ -95,5 +98,11 @@ export const TrainList = () => {
         </TableBody>
       </Table>
     </TableContainer>
+  
+
+  return (
+   <Fragment>
+    {trains.length ? renderList() : <p>Train data not found.</p>}
+   </Fragment>
   );
 };

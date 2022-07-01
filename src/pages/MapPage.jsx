@@ -1,8 +1,10 @@
 import React from "react";
 import { Map } from "../components/Map/Map";
 import { useJsApiLoader } from "@react-google-maps/api";
-import { Backdrop, CircularProgress } from "@mui/material";
+import { Backdrop, CircularProgress} from "@mui/material";
 const API_KEY = process.env.REACT_APP_API_KEY;
+
+
 
 export const MapPage = () => {
   const { isLoaded } = useJsApiLoader({
@@ -24,7 +26,5 @@ export const MapPage = () => {
   );
 
   // const navigate = useNavigate();
-  return <div>
-
-  {isLoaded ? <Map center={defaultCenter}/> : isLoading }</div>;
+  return <div>{isLoaded ? <Map center={defaultCenter} /> : isLoading}</div>;
 };

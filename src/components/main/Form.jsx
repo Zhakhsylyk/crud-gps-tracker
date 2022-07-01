@@ -1,12 +1,12 @@
 import { Button, Box, Typography, Stack, TextField } from "@mui/material";
 import { useRef, useState } from "react";
-import { Modal } from "../components/UI/Modal";
+import { Modal } from "../UI/Modal";
 import AddIcon from "@mui/icons-material/Add";
-import { MapForm } from "../components/Map/MapForm";
+import { MapForm } from "../Map/MapForm";
 import { useJsApiLoader } from "@react-google-maps/api";
 import { v4 } from "uuid";
 import { useDispatch } from "react-redux";
-import { addTrain } from "../features/trainSlice";
+import { addTrain } from "../../features/trainSlice";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const isEmpty = (value) => value.trim() === "";

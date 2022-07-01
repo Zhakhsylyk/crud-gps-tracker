@@ -1,10 +1,9 @@
 import { Button } from "@mui/material";
 import { Box } from "@mui/system";
 import { Fragment, useState } from "react";
-// import { useNavigate } from "react-router-dom";
-import { TrainList } from "../Main/TrainList";
+import { TrainList } from "../components/main/TrainList";
 import AddIcon from "@mui/icons-material/Add";
-import { Form } from "../Main/Form";
+import { Form } from "../components/main/Form";
 import MapIcon from '@mui/icons-material/Map';
 import {useNavigate} from 'react-router-dom'
 

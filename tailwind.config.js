@@ -8,6 +8,9 @@ module.exports = {
       height: {
         'box': '650px',
       },
+      margin: {
+        'form': '500px',
+      },
       colors: { 
         backgroundColor: '#242a38',
         containerColor: '#1a1c28',

@@ -1,9 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { GoogleMap } from "@react-google-maps/api";
 import { TrainMarker } from "./TrainMarker";
 import { useSelector } from "react-redux";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { v4 } from "uuid";
 const containerStyle = {
   width: "100%",
   height: "100%",
