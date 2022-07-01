@@ -17,6 +17,7 @@ import MyLocationIcon from "@mui/icons-material/MyLocation";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteTrain } from "../../features/trainSlice";
 import { Link } from "react-router-dom";
+import styles from './../../assets/styles/TrainList.module.scss';
 
 
 export const TrainList = () => {
@@ -36,17 +37,17 @@ export const TrainList = () => {
               id{" "}
             </TableCell>
             <TableCell sx={{ color: "#fff" }} align="center">
-              <TrainIcon className="relative right-2" />
+              <TrainIcon className={styles['train-icon']} />
               Наименование{" "}
             </TableCell>
             <TableCell sx={{ color: "#fff" }} align="center">
               Серия
             </TableCell>
             <TableCell sx={{ color: "#fff" }} align="center">
-              <EventSeatIcon className="relative right-2" /> Количество секции
+              <EventSeatIcon className={styles['train-icon']} /> Количество секции
             </TableCell>
             <TableCell sx={{ color: "#fff" }} align="center">
-              <MyLocationIcon className="relative right-2" />
+              <MyLocationIcon className={styles['train-icon']} />
               Координаты
             </TableCell>
             <TableCell sx={{ color: "#fff" }}></TableCell>
@@ -75,20 +76,20 @@ export const TrainList = () => {
                 align="center"
               >{`${row.latitude} , ${row.longitude}`}</TableCell>
               <TableCell>
-                <Box className="flex gap-4 justify-end">
+                <Box className={styles['button-container']}>
                   <Tooltip
                     title="Редактировать"
                     enterDelay={500}
                     leaveDelay={200}
                   >
                   <Link to={`edit-train/${row.id}`}>
-                    <EditIcon className="ml-7 text-green-400" />
+                    <EditIcon className={styles['edit-icon']} />
                   </Link>
                   </Tooltip>
                   <Tooltip title="Удалить" enterDelay={500} leaveDelay={200}>
                     <DeleteIcon
                       onClick={() => deleteHandler(row.id)}
-                      className="text-red-600"
+                      className={styles['delete-icon']}
                     />
                   </Tooltip>
                 </Box>

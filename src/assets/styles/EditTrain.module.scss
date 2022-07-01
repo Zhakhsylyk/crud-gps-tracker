@@ -1,0 +1,12 @@
+.form {
+    @apply bg-containerColor text-white drop-shadow-md shadow-xl shadow-slate-900 gap-5 pt-5 px-5 justify-center mx-form rounded-2xl my-7 h-80
+}
+.form-input__container{
+    @apply pt-5 px-12 flex flex-col gap-5
+}
+.input { 
+    @apply w-96
+}
+.button{
+    @apply pt-7 flex justify-end
+}

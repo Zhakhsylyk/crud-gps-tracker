@@ -1,5 +1,5 @@
 import React from "react";
-import { Map } from "../components/Map/Map";
+import { Map } from "../components/map/Map";
 import { useJsApiLoader } from "@react-google-maps/api";
 import { Backdrop, CircularProgress} from "@mui/material";
 const API_KEY = process.env.REACT_APP_API_KEY;

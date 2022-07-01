@@ -1,0 +1,12 @@
+.modal{
+    @apply flex gap-2
+}
+.form-container{
+    @apply grow
+}
+.input{ 
+    @apply mt-5
+}
+.button{
+    @apply flex justify-end mt-5
+}

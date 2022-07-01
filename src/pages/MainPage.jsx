@@ -6,6 +6,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { Form } from "../components/main/Form";
 import MapIcon from '@mui/icons-material/Map';
 import {useNavigate} from 'react-router-dom'
+import styles from '../assets/styles/MainPage.module.scss';
 
 
 export const MainPage = () => {
@@ -21,7 +22,7 @@ export const MainPage = () => {
   return (
     <Fragment>
       {formIsVisible && <Form onClose={HideFormHandler} />}
-      <Box className="flex gap-5 justify-end mt-5 mr-10">
+      <Box className={styles.header}>
         <Button
           variant="contained"
           endIcon={<AddIcon />}
@@ -37,10 +38,9 @@ export const MainPage = () => {
           Карта
         </Button>
       </Box>
-      <Box className="bg-containerColor text-white drop-shadow-2xl shadow-2xl shadow-slate-900 flex pt-5 justify-center mx-10 rounded-2xl my-7 h-box">
+      <Box className={styles.container}>
         <TrainList />
       </Box>
-      {/* <button onClick={() => {navigate('/map')}}>Go to Map Page</button> */}
     </Fragment>
   );
 };

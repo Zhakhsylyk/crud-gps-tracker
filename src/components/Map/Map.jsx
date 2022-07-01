@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import { GoogleMap } from "@react-google-maps/api";
 import { TrainMarker } from "./TrainMarker";
 import { useSelector } from "react-redux";
+import styles from '../../assets/styles/Map.module.scss';
+
 const containerStyle = {
   width: "100%",
   height: "100%",
@@ -20,7 +22,7 @@ export const Map = ({ center }) => {
   }, []);
 
   return (
-    <div className="w-screen h-screen">
+    <div className={styles.map}>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}

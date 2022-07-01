@@ -1,0 +1,12 @@
+.train-icon {
+    @apply relative right-2
+}
+.button-container {
+    @apply flex gap-4 justify-end
+}
+.edit-icon{ 
+    @apply ml-7 text-green-400
+}
+.delete-icon{
+    @apply text-red-600
+}

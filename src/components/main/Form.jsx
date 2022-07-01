@@ -2,11 +2,12 @@ import { Button, Box, Typography, Stack, TextField } from "@mui/material";
 import { useRef, useState } from "react";
 import { Modal } from "../UI/Modal";
 import AddIcon from "@mui/icons-material/Add";
-import { MapForm } from "../Map/MapForm";
+import { MapForm } from "../map/MapForm";
 import { useJsApiLoader } from "@react-google-maps/api";
 import { v4 } from "uuid";
 import { useDispatch } from "react-redux";
 import { addTrain } from "../../features/trainSlice";
+import styles from './../../assets/styles/Form.module.scss';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const isEmpty = (value) => value.trim() === "";
@@ -77,14 +78,14 @@ export const Form = ({ onClose }) => {
 
   return (
     <Modal onClose={onClose}>
-      <Box className="flex gap-2">
+      <Box className={styles['modal']}>
         <Box>
           {isLoaded ? <MapForm passLatitude={setLatitude} passLongitude={setLongitude} center={defaultCenter} /> : <p>Loading...</p>}
         </Box>
-        <Box className="grow">
+        <Box className={styles['form-container']}>
           <Typography variant="h6">Новая запись</Typography>
           <form>
-            <Stack spacing={2} className="mt-5">
+            <Stack spacing={2} className={styles.input}>
               <TextField
                 required
                 error={formInputsValid.name ? false : true}
@@ -130,7 +131,7 @@ export const Form = ({ onClose }) => {
                 inputRef={sectionNumberInputRef}
               />
             </Stack>
-            <Box className="flex justify-end mt-5 ">
+            <Box className={styles.button}>
               <Button
                 onClick={confirmHandler}
                 type="submit"
