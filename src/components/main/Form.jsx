@@ -59,8 +59,8 @@ export const Form = ({ onClose }) => {
       name: name,
       number: number,
       sectionNumber:sectionNumber,
-      latitude:latitude.toFixed(3),
-      longitude:longitude.toFixed(3)
+      latitude:latitude,
+      longitude:longitude
     }));
     console.log(id, name, number, sectionNumber, latitude, longitude);
 
