@@ -18,6 +18,8 @@ export const Form = ({ onClose }) => {
     name: true,
     number: true,
     sectionNumber: true,
+    latitude: true,
+    longitude:true,
   });
   const nameInputRef = useRef();
   const numberInputRef = useRef();
@@ -38,14 +40,19 @@ export const Form = ({ onClose }) => {
     const nameIsValid = !isEmpty(name);
     const numberIsValid = !isEmpty(number);
     const sectionNumberIsValid = !isEmpty(sectionNumber);
+    const latitudeIsValid = !isEmpty(latitude);
+    const longitudeIsValid = !isEmpty(latitude);
 
     setFormInputsValid({
       name: nameIsValid,
       number: numberIsValid,
       sectionNumber: sectionNumberIsValid,
+      latitude: latitudeIsValid,
+      longitude:longitudeIsValid,
+
     });
 
-    const formIsValid = nameIsValid && numberIsValid && sectionNumberIsValid;
+    const formIsValid = nameIsValid && numberIsValid && sectionNumberIsValid && latitudeIsValid && longitudeIsValid;
 
     if (!formIsValid) {
       return;
@@ -130,6 +137,7 @@ export const Form = ({ onClose }) => {
                 }
                 inputRef={sectionNumberInputRef}
               />
+              {!formInputsValid.latitude && !formInputsValid.longitude && <p className={styles['location-alert']}>Выберите местоположение!</p>}
             </Stack>
             <Box className={styles.button}>
               <Button

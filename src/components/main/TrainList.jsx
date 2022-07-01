@@ -103,7 +103,7 @@ export const TrainList = () => {
 
   return (
    <Fragment>
-    {trains.length ? renderList() : <p>Train data not found.</p>}
+    {trains.length ? renderList() : <p className={styles.empty}>Train data not found.</p>}
    </Fragment>
   );
 };

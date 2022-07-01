@@ -1,31 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [
-  {
-    id: 1,
-    name: "Agnese",
-    number: "Clohessy",
-    sectionNumber: "aclohessy0@51.la",
-    latitude: "Female",
-    longitude: "237.129.93.152",
-  },
-  {
-    id: 2,
-    name: "Agnese",
-    number: "Clohessy",
-    sectionNumber: "aclohessy0@51.la",
-    latitude: "Female",
-    longitude: "237.129.93.152",
-  },
-  {
-    id: 3,
-    name: "Agnese",
-    number: "Clohessy",
-    sectionNumber: "aclohessy0@51.la",
-    latitude: "Female",
-    longitude: "237.129.93.152",
-  },
-];
+const initialState = [];
 
 export const trainSlice = createSlice({
   name: "train",
@@ -46,6 +21,7 @@ export const trainSlice = createSlice({
     deleteTrain: (state, action) => {
       const { id } = action.payload;
       const index = state.findIndex((state) => state.id !== id);
+      state.map(state => console.log(state.id))
       state.splice(index, 1);
     },
   },
