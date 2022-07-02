@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/crud-gps-tracker/static/css/main.773ffb53.css",
-    "main.js": "/crud-gps-tracker/static/js/main.8bef14db.js",
+    "main.js": "/crud-gps-tracker/static/js/main.ce71a780.js",
     "index.html": "/crud-gps-tracker/index.html",
     "main.773ffb53.css.map": "/crud-gps-tracker/static/css/main.773ffb53.css.map",
-    "main.8bef14db.js.map": "/crud-gps-tracker/static/js/main.8bef14db.js.map"
+    "main.ce71a780.js.map": "/crud-gps-tracker/static/js/main.ce71a780.js.map"
   },
   "entrypoints": [
     "static/css/main.773ffb53.css",
-    "static/js/main.8bef14db.js"
+    "static/js/main.ce71a780.js"
   ]
 }
