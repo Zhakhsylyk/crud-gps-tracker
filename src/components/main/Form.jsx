@@ -94,7 +94,10 @@ export const Form = ({ onClose }) => {
           <form>
             <Stack spacing={2} className={styles.input}>
               <TextField
-                sx={{ input : {color: 'white' } , "input::placeholder": { color: "white" }}}
+                sx={{
+                  input: { color: "white" },
+                  "input::placeholder": { color: "white" },
+                }}
                 required
                 error={formInputsValid.name ? false : true}
                 id={
@@ -109,7 +112,10 @@ export const Form = ({ onClose }) => {
                 inputRef={nameInputRef}
               />
               <TextField
-                sx={{ input : {color: 'white' } , "input::placeholder": { color: "white" }}}
+                sx={{
+                  input: { color: "white" },
+                  "input::placeholder": { color: "white" },
+                }}
                 required
                 error={formInputsValid.number ? false : true}
                 id={
@@ -124,7 +130,10 @@ export const Form = ({ onClose }) => {
                 inputRef={numberInputRef}
               />
               <TextField
-                sx={{ input : {color: 'white' } , "input::placeholder": { color: "white" }}}
+                sx={{
+                  input: { color: "white" },
+                  "input::placeholder": { color: "white" },
+                }}
                 required
                 error={formInputsValid.sectionNumber ? false : true}
                 id={

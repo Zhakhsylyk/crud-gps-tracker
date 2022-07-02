@@ -9,10 +9,10 @@ export const trainSlice = createSlice({
     addTrain: (state, action) => {
       state.push(action.payload);
     },
-    editTrain: (state,action) => {
-      const {id, name, number, sectionNumber } = action.payload;
-      const existingTrain = state.find(state => state.id === id);
-      if(existingTrain){
+    editTrain: (state, action) => {
+      const { id, name, number, sectionNumber } = action.payload;
+      const existingTrain = state.find((state) => state.id === id);
+      if (existingTrain) {
         existingTrain.name = name;
         existingTrain.number = number;
         existingTrain.sectionNumber = sectionNumber;

@@ -1,15 +1,15 @@
-.modal{
-    @apply flex gap-2
+.modal {
+  @apply flex gap-2;
 }
-.form-container{
-    @apply grow
+.form-container {
+  @apply grow;
 }
-.input{ 
-    @apply mt-5
+.input {
+  @apply mt-5;
 }
-.button{
-    @apply flex justify-end mt-5
+.button {
+  @apply flex justify-end mt-5;
 }
-.location-alert{
-    @apply text-red-500
+.location-alert {
+  @apply text-red-500;
 }

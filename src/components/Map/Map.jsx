@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { GoogleMap, InfoWindow} from "@react-google-maps/api";
+import { GoogleMap, InfoWindow } from "@react-google-maps/api";
 import { TrainMarker } from "./TrainMarker";
 import { useSelector } from "react-redux";
 import styles from "../../assets/styles/Map.module.scss";

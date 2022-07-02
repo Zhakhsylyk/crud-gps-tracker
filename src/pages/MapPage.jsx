@@ -4,8 +4,6 @@ import { useJsApiLoader } from "@react-google-maps/api";
 import { Loading } from "../components/UI/Loading";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-
-
 export const MapPage = () => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",

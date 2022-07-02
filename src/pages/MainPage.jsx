@@ -4,10 +4,9 @@ import { Fragment, useState } from "react";
 import { TrainList } from "../components/main/TrainList";
 import AddIcon from "@mui/icons-material/Add";
 import { Form } from "../components/main/Form";
-import MapIcon from '@mui/icons-material/Map';
-import {useNavigate} from 'react-router-dom'
-import styles from '../assets/styles/MainPage.module.scss';
-
+import MapIcon from "@mui/icons-material/Map";
+import { useNavigate } from "react-router-dom";
+import styles from "../assets/styles/MainPage.module.scss";
 
 export const MainPage = () => {
   const [formIsVisible, setFormIsVisible] = useState(false);
@@ -33,7 +32,7 @@ export const MainPage = () => {
         <Button
           variant="contained"
           endIcon={<MapIcon />}
-          onClick={() => navigate('/map')}
+          onClick={() => navigate("/map")}
         >
           Карта
         </Button>

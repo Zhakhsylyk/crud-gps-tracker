@@ -7,7 +7,7 @@ import {
   TableRow,
   TableCell,
   Box,
-  Tooltip
+  Tooltip,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
@@ -17,8 +17,7 @@ import MyLocationIcon from "@mui/icons-material/MyLocation";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteTrain } from "../../features/trainSlice";
 import { Link } from "react-router-dom";
-import styles from './../../assets/styles/TrainList.module.scss';
-
+import styles from "./../../assets/styles/TrainList.module.scss";
 
 export const TrainList = () => {
   const dispatch = useDispatch();
@@ -28,7 +27,8 @@ export const TrainList = () => {
     dispatch(deleteTrain(id));
   };
 
-  const renderList = () => <TableContainer>
+  const renderList = () => (
+    <TableContainer>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -36,17 +36,18 @@ export const TrainList = () => {
               id{" "}
             </TableCell>
             <TableCell sx={{ color: "#fff" }} align="center">
-              <TrainIcon className={styles['train-icon']} />
+              <TrainIcon className={styles["train-icon"]} />
               Наименование{" "}
             </TableCell>
             <TableCell sx={{ color: "#fff" }} align="center">
               Серия
             </TableCell>
             <TableCell sx={{ color: "#fff" }} align="center">
-              <EventSeatIcon className={styles['train-icon']} /> Количество секции
+              <EventSeatIcon className={styles["train-icon"]} /> Количество
+              секции
             </TableCell>
             <TableCell sx={{ color: "#fff" }} align="center">
-              <MyLocationIcon className={styles['train-icon']} />
+              <MyLocationIcon className={styles["train-icon"]} />
               Координаты
             </TableCell>
             <TableCell sx={{ color: "#fff" }}></TableCell>
@@ -75,20 +76,20 @@ export const TrainList = () => {
                 align="center"
               >{`${row.latitude} , ${row.longitude}`}</TableCell>
               <TableCell>
-                <Box className={styles['button-container']}>
+                <Box className={styles["button-container"]}>
                   <Tooltip
                     title="Редактировать"
                     enterDelay={500}
                     leaveDelay={200}
                   >
-                  <Link to={`edit-train/${row.id}`}>
-                    <EditIcon className={styles['edit-icon']} />
-                  </Link>
+                    <Link to={`edit-train/${row.id}`}>
+                      <EditIcon className={styles["edit-icon"]} />
+                    </Link>
                   </Tooltip>
                   <Tooltip title="Удалить" enterDelay={500} leaveDelay={200}>
                     <DeleteIcon
                       onClick={() => deleteHandler(row.id)}
-                      className={styles['delete-icon']}
+                      className={styles["delete-icon"]}
                     />
                   </Tooltip>
                 </Box>
@@ -98,11 +99,15 @@ export const TrainList = () => {
         </TableBody>
       </Table>
     </TableContainer>
-  
+  );
 
   return (
-   <Fragment>
-    {trains.length ? renderList() : <p className={styles.empty}>Данные поездов не найдены.</p>}
-   </Fragment>
+    <Fragment>
+      {trains.length ? (
+        renderList()
+      ) : (
+        <p className={styles.empty}>Данные поездов не найдены.</p>
+      )}
+    </Fragment>
   );
 };

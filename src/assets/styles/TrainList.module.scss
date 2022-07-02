@@ -1,15 +1,15 @@
 .train-icon {
-    @apply relative right-2
+  @apply relative right-2;
 }
 .button-container {
-    @apply flex gap-4 justify-end
+  @apply flex gap-4 justify-end;
 }
-.edit-icon{ 
-    @apply ml-7 text-green-400
+.edit-icon {
+  @apply ml-7 text-green-400;
 }
-.delete-icon{
-    @apply text-red-600
+.delete-icon {
+  @apply text-red-600;
 }
-.empty{
-    @apply m-16 text-2xl
+.empty {
+  @apply m-16 text-2xl;
 }

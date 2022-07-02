@@ -1,6 +1,6 @@
-.header{ 
-    @apply flex gap-5 justify-end mt-5 mr-10
+.header {
+  @apply flex gap-5 justify-end mt-5 mr-10;
 }
-.container{
-    @apply bg-containerColor text-white drop-shadow-2xl shadow-2xl shadow-slate-900 flex pt-5 justify-center mx-10 rounded-2xl my-7 h-box
+.container {
+  @apply bg-containerColor text-white drop-shadow-2xl shadow-2xl shadow-slate-900 flex pt-5 justify-center mx-10 rounded-2xl my-7 h-box;
 }

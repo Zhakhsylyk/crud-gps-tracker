@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { GoogleMap } from "@react-google-maps/api";
 import { v4 as uuidv4 } from "uuid";
 import { TrainMarker } from "./TrainMarker";
-import styles from './../../assets/styles/MapForm.module.scss';
+import styles from "./../../assets/styles/MapForm.module.scss";
 
 const containerStyle = {
   width: "100%",
@@ -28,7 +28,7 @@ export const MapForm = ({ center, passLatitude, passLongitude }) => {
   }
 
   return (
-    <div className={styles['form-map']}>
+    <div className={styles["form-map"]}>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
