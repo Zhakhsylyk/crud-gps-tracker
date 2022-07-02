@@ -21,7 +21,6 @@ export const trainSlice = createSlice({
     deleteTrain: (state, action) => {
       const { id } = action.payload;
       const index = state.findIndex((state) => state.id !== id);
-      state.map(state => console.log(state.id))
       state.splice(index, 1);
     },
   },

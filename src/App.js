@@ -8,9 +8,9 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/map" element={<MapPage />} />
-          <Route path="/edit-train/:id" element={<EditTrain />} />
+          <Route path="/index" element={<MainPage />} />
+          <Route path="/index/map" element={<MapPage />} />
+          <Route path="/index/edit-train/:id" element={<EditTrain />} />
         </Routes>
       </Router>
     </div>

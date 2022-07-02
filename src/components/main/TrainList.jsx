@@ -23,7 +23,6 @@ import styles from './../../assets/styles/TrainList.module.scss';
 export const TrainList = () => {
   const dispatch = useDispatch();
   const trains = useSelector((store) => store.train.train);
-  console.log(trains);
 
   const deleteHandler = (id) => {
     dispatch(deleteTrain(id));

@@ -33,7 +33,7 @@ export const MainPage = () => {
         <Button
           variant="contained"
           endIcon={<MapIcon />}
-          onClick={() => navigate('/map')}
+          onClick={() => navigate('/index/map')}
         >
           Карта
         </Button>

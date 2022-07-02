@@ -15,8 +15,6 @@ export const Map = ({ center }) => {
   const [selected, setSelected] = useState(null);
   const mapRef = useRef(undefined);
 
-  const float = "51.2434343434";
-  console.log(+float);
   useEffect(() => {
     setIsVisible(true);
   }, []);

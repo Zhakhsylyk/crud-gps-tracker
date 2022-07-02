@@ -27,7 +27,7 @@ export const EditTrain = () => {
         sectionNumber: values.sectionNumber,
       })
     );
-    navigate("/");
+    navigate("/index");
   };
   return (
     <Box className={styles.form}>

@@ -7,7 +7,8 @@ import { useJsApiLoader } from "@react-google-maps/api";
 import { v4 } from "uuid";
 import { useDispatch } from "react-redux";
 import { addTrain } from "../../features/trainSlice";
-import styles from './../../assets/styles/Form.module.scss';
+import styles from "./../../assets/styles/Form.module.scss";
+import { Loading } from "../UI/Loading";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const isEmpty = (value) => value.trim() === "";
@@ -18,16 +19,12 @@ export const Form = ({ onClose }) => {
     name: true,
     number: true,
     sectionNumber: true,
-    latitude: true,
-    longitude:true,
   });
   const nameInputRef = useRef();
   const numberInputRef = useRef();
   const sectionNumberInputRef = useRef();
-  const [latitude,setLatitude] = useState('');
-  const [longitude,setLongitude] = useState('');
-
-  
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
 
   const confirmHandler = (event) => {
     event.preventDefault();
@@ -35,41 +32,34 @@ export const Form = ({ onClose }) => {
     const name = nameInputRef.current.value;
     const number = numberInputRef.current.value;
     const sectionNumber = sectionNumberInputRef.current.value;
-    let id = v4().slice(0,5);
+    let id = v4().slice(0, 5);
 
     const nameIsValid = !isEmpty(name);
     const numberIsValid = !isEmpty(number);
     const sectionNumberIsValid = !isEmpty(sectionNumber);
-    const latitudeIsValid = !isEmpty(latitude);
-    const longitudeIsValid = !isEmpty(latitude);
 
     setFormInputsValid({
       name: nameIsValid,
       number: numberIsValid,
       sectionNumber: sectionNumberIsValid,
-      latitude: latitudeIsValid,
-      longitude:longitudeIsValid,
-
     });
 
-    const formIsValid = nameIsValid && numberIsValid && sectionNumberIsValid && latitudeIsValid && longitudeIsValid;
+    const formIsValid = nameIsValid && numberIsValid && sectionNumberIsValid;
 
     if (!formIsValid) {
       return;
     }
-    
- 
 
-    
-    dispatch(addTrain({
-      id: id,
-      name: name,
-      number: number,
-      sectionNumber:sectionNumber,
-      latitude:latitude,
-      longitude:longitude
-    }));
-    console.log(id, name, number, sectionNumber, latitude, longitude);
+    dispatch(
+      addTrain({
+        id: id,
+        name: name,
+        number: number,
+        sectionNumber: sectionNumber,
+        latitude: latitude,
+        longitude: longitude,
+      })
+    );
 
     onClose();
   };
@@ -85,20 +75,31 @@ export const Form = ({ onClose }) => {
 
   return (
     <Modal onClose={onClose}>
-      <Box className={styles['modal']}>
+      <Box className={styles["modal"]}>
         <Box>
-          {isLoaded ? <MapForm passLatitude={setLatitude} passLongitude={setLongitude} center={defaultCenter} /> : <p>Loading...</p>}
+          {isLoaded ? (
+            <MapForm
+              passLatitude={setLatitude}
+              passLongitude={setLongitude}
+              center={defaultCenter}
+            />
+          ) : (
+            <Loading />
+          )}
         </Box>
-        <Box className={styles['form-container']}>
-          <Typography variant="h6">Новая запись</Typography>
+        <Box className={styles["form-container"]}>
+          <Typography variant="h6" className="text-white">
+            Новая запись
+          </Typography>
           <form>
             <Stack spacing={2} className={styles.input}>
               <TextField
+                sx={{ input : {color: 'white' } , "input::placeholder": { color: "white" }}}
                 required
                 error={formInputsValid.name ? false : true}
                 id={
                   formInputsValid.name
-                    ? "outlined-required"
+                    ? "filled-basic"
                     : "standard-error-helper-text"
                 }
                 placeholder="Наименование"
@@ -108,11 +109,12 @@ export const Form = ({ onClose }) => {
                 inputRef={nameInputRef}
               />
               <TextField
+                sx={{ input : {color: 'white' } , "input::placeholder": { color: "white" }}}
                 required
                 error={formInputsValid.number ? false : true}
                 id={
                   formInputsValid.number
-                    ? "outlined-required"
+                    ? "filled-basic"
                     : "standard-error-helper-text"
                 }
                 placeholder="Серия"
@@ -122,11 +124,12 @@ export const Form = ({ onClose }) => {
                 inputRef={numberInputRef}
               />
               <TextField
+                sx={{ input : {color: 'white' } , "input::placeholder": { color: "white" }}}
                 required
                 error={formInputsValid.sectionNumber ? false : true}
                 id={
                   formInputsValid.sectionNumber
-                    ? "outlined-required"
+                    ? "filled-basic"
                     : "standard-error-helper-text"
                 }
                 placeholder="Количество секции"
@@ -137,7 +140,6 @@ export const Form = ({ onClose }) => {
                 }
                 inputRef={sectionNumberInputRef}
               />
-              {!formInputsValid.latitude && !formInputsValid.longitude && <p className={styles['location-alert']}>Выберите местоположение!</p>}
             </Stack>
             <Box className={styles.button}>
               <Button
